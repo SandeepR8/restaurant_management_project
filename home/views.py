@@ -1,8 +1,7 @@
 from django.shortcuts import render
 from .models import restaurant
-from rest_framework import generics
 
 
-class restaurantView(generics.ListAPIView):
+def RestaurantView(request):
     queryset=restaurant.objects.all()
-    serializer_class=RestaurantSerializers
+    return render(request,'core/home.html',queryset)
